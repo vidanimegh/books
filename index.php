@@ -14,7 +14,7 @@
 	$result = $conn->query($sql);
 	
 	if ($result->num_rows > 0) {
-	    echo '{"books":[';
+	    echo '[';
 
     	    $first = true; 
     	    while($row=$result->fetch_assoc()){
@@ -27,9 +27,9 @@
             	}
             	echo json_encode($row);
     	    }
-    	    echo ']}'; 
+    	    echo ']'; 
 	} else {
-	    echo "0 results";
+	    echo "[]";
 	}
 	$conn->close();
 ?>
